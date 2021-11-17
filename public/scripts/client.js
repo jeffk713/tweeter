@@ -1,18 +1,30 @@
-const mockUser = {
-  user: {
-    name: 'Newton',
-    avatars: 'https://i.imgur.com/73hZDYK.png',
-    handle: '@SirIsaac',
+// Fake data taken from initial-tweets.json
+const mockUser = [
+  {
+    user: {
+      name: 'Newton',
+      avatars: 'https://i.imgur.com/73hZDYK.png',
+      handle: '@SirIsaac',
+    },
+    content: {
+      text: 'If I have seen further it is by standing on the shoulders of giants',
+    },
+    created_at: 1461116232227,
   },
-  content: {
-    text: 'If I have seen further it is by standing on the shoulders of giants',
+  {
+    user: {
+      name: 'Descartes',
+      avatars: 'https://i.imgur.com/nlhLi3I.png',
+      handle: '@rd',
+    },
+    content: {
+      text: 'Je pense , donc je suis',
+    },
+    created_at: 1461113959088,
   },
-  created_at: 1461116232227,
-};
+];
 
 $(document).ready(function () {
-  // const $tweet = $(`<article class="tweet">Hello world</article>`);
-
   // create a new tweet
   const createTweetElement = tweetData =>
     $(
@@ -27,7 +39,7 @@ $(document).ready(function () {
         <p>${tweetData.content.text}</p>
       </main>
       <footer>
-        <span>${tweetData.created_at}</span>
+        <span>${timeago.format(tweetData.created_at)}</span>
         <span>
           <i class='fas fa-flag'></i>
           <i class='fas fa-retweet'></i>
@@ -37,8 +49,13 @@ $(document).ready(function () {
     </article>`
     );
 
-  const $tweet = createTweetElement(mockUser);
+  // append tweets to .tweets-container
+  const renderTweets = tweets => {
+    for (const tweet of tweets) {
+      const tweetToAdd = createTweetElement(tweet);
+      $('.tweets-container').append(tweetToAdd);
+    }
+  };
 
-  console.log($tweet);
-  $('.tweets-container').append($tweet);
+  renderTweets(mockUser);
 });
