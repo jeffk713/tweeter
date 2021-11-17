@@ -31,7 +31,10 @@ $(document).ready(function () {
       `<article class='existing-tweet'>
       <header>
         <span>
-          ${tweetData.user.avatars} ${tweetData.user.name}
+          <img src=${tweetData.user.avatars} alt='pic' />
+          <span>
+          ${tweetData.user.name}
+          </span>
         </span>
         <span>${tweetData.user.handle}</span>
       </header>
@@ -56,6 +59,17 @@ $(document).ready(function () {
       $('.tweets-container').append(tweetToAdd);
     }
   };
+
+  $('.new-tweet-form').on('submit', event => {
+    event.preventDefault();
+
+    console.log($(event.target).serialize());
+
+    const text = $(event.target).serialize();
+    $.ajax({ type: 'POST', url: '/tweets', data: text }).then(res =>
+      console.log(res)
+    );
+  });
 
   renderTweets(mockUser);
 });

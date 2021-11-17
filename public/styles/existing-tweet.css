@@ -16,6 +16,12 @@
   justify-content: space-between;
 }
 
+.existing-tweet header span {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
 .existing-tweet main {
   border-bottom: solid black 2px;
   padding: 0 0.5em;
