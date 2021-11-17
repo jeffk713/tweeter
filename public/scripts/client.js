@@ -56,20 +56,27 @@ $(document).ready(function () {
   const renderTweets = tweets => {
     for (const tweet of tweets) {
       const tweetToAdd = createTweetElement(tweet);
-      $('.tweets-container').append(tweetToAdd);
+      $('.tweets-container').prepend(tweetToAdd);
     }
   };
 
+  // load tweets
+  const loadTweets = () => {
+    // create GET ajax request to bring tweets
+    return $.ajax({ type: 'GET', url: '/tweets' }).then(tweets =>
+      renderTweets(tweets)
+    );
+  };
+
+  // create POST ajax request upon submit
   $('.new-tweet-form').on('submit', event => {
     event.preventDefault();
 
-    console.log($(event.target).serialize());
-
     const text = $(event.target).serialize();
     $.ajax({ type: 'POST', url: '/tweets', data: text }).then(res =>
-      console.log(res)
+      loadTweets()
     );
   });
 
-  renderTweets(mockUser);
+  loadTweets();
 });
