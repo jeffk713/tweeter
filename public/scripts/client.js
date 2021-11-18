@@ -55,7 +55,7 @@ $(document).ready(function () {
     // when the MAX number of letters is exceeded
     const remainingCounter = $('.counter').val();
     if (remainingCounter < 0) {
-      return alert('tweet is too long');
+      return toggleErrorSign('Tweet is too long sorry!');
     }
 
     const queryString = $(event.target).serialize();
@@ -64,7 +64,7 @@ $(document).ready(function () {
     const input = queryString.replace('text=', '');
     // when input is empty string or null
     if (!input) {
-      return alert('please input');
+      return toggleErrorSign('Please type your humming!');
     }
 
     // create POST request
@@ -76,6 +76,15 @@ $(document).ready(function () {
       })
       .catch(error => alert(error.message));
   });
+
+  //toggle .hide class on .error-sign element
+  const toggleErrorSign = message => {
+    $('.error-sign').toggleClass('hide');
+    $('.error-sign').text(message);
+
+    // set time
+    setTimeout(() => $('.error-sign').toggleClass('hide'), 1000);
+  };
 
   // laodTweets at initial render
   loadTweets();
