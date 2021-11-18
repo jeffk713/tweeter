@@ -37,5 +37,6 @@ $(document).ready(function () {
   // scroll to the top upon bottom button click
   $('.button-to-top').on('click', () => {
     $(window).scrollTop(0);
+    $('.new-tweet-form').removeClass('close');
   });
 });
