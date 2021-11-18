@@ -48,6 +48,20 @@ $(document).ready(function () {
     );
   };
 
+  //toggle hide class on .error-sign element
+  const toggleErrorSign = message => {
+    $('.error-sign').toggleClass('hide');
+    $('.error-sign').text(message);
+
+    // set time
+    setTimeout(() => $('.error-sign').toggleClass('hide'), 1000);
+  };
+
+  //toggle close class on new-tweet-form element
+  const toggleNewTweet = () => {
+    $('.new-tweet-form').toggleClass('close');
+  };
+
   // create POST ajax request upon submit
   $('.new-tweet-form').on('submit', event => {
     event.preventDefault();
@@ -77,15 +91,9 @@ $(document).ready(function () {
       .catch(error => alert(error.message));
   });
 
-  //toggle .hide class on .error-sign element
-  const toggleErrorSign = message => {
-    $('.error-sign').toggleClass('hide');
-    $('.error-sign').text(message);
-
-    // set time
-    setTimeout(() => $('.error-sign').toggleClass('hide'), 1000);
-  };
-
+  $('.nav-link-container i').on('click', () => {
+    toggleNewTweet();
+  });
   // laodTweets at initial render
   loadTweets();
 });

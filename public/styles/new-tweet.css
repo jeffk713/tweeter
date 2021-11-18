@@ -2,10 +2,20 @@
   margin-top: 20px;
 }
 
-.new-tweet .new-tweet-form {
+.new-tweet-form {
+  overflow-y: hidden;
+  max-height: 130px;
+
+  transition: all 1s;
+
   display: flex;
   flex-direction: column;
   margin: 20px auto 60px auto;
+}
+
+.close {
+  max-height: 0px;
+  margin: 0;
 }
 
 .error-sign {

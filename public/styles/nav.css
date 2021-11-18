@@ -29,6 +29,7 @@
 }
 .nav-link-container i {
   color: red;
+  cursor: pointer;
 }
 .nav-link b {
   font-weight: 600;
