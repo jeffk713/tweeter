@@ -30,4 +30,5 @@
 .new-tweet-form-button {
   background-color: #4056a1;
   color: #ffffff;
+  cursor: pointer;
 }
