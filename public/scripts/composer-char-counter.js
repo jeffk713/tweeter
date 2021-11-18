@@ -16,4 +16,26 @@ $(document).ready(function () {
       $('.new-tweet-form-output').css({ color: 'unset' });
     }
   });
+
+  // event listener upon scrolling
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll !== 0) {
+      $('.button-to-top').addClass('appear');
+    }
+    if (scroll === 0) {
+      $('.button-to-top').removeClass('appear');
+    }
+    if (scroll > 120) {
+      $('.nav').addClass('nav-hide');
+    }
+    if (scroll <= 120) {
+      $('.nav').removeClass('nav-hide');
+    }
+  });
+
+  // scroll to the top upon bottom button click
+  $('.button-to-top').on('click', () => {
+    $(window).scrollTop(0);
+  });
 });

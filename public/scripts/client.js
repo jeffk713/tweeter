@@ -91,9 +91,12 @@ $(document).ready(function () {
       .catch(error => alert(error.message));
   });
 
+  // toggle new-tweet-from upon new tweet icon click
   $('.nav-link-container i').on('click', () => {
     toggleNewTweet();
   });
+
+
   // laodTweets at initial render
   loadTweets();
 });

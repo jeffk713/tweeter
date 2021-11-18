@@ -1,0 +1,18 @@
+.button-to-top {
+  position: fixed;
+  top: calc(100% - 120px);
+  left: calc(100% - 120px);
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 1s;
+  opacity: 0;
+}
+
+.appear {
+  opacity: 1;
+}
