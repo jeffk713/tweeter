@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["sample1"] (/docs/1.png)
-!["sample2"] (/docs/2.png)
-!["sample3"] (/docs/3.png)
+![sample] (https://github.com/jeffk713/tweeter/blob/master/docs/1.png?raw=true)
+![sample] (https://github.com/jeffk713/tweeter/blob/master/docs/2.png?raw=true)
+![sample] (https://github.com/jeffk713/tweeter/blob/master/docs/3.png?raw=true)
 
 ## Dependencies
 
