@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
   });
 
-  // event listener upon scrolling
+  // nav and bottom-button style change upon scrolling
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     if (scroll !== 0) {
@@ -34,7 +34,7 @@ $(document).ready(function () {
     }
   });
 
-  // scroll to the top upon bottom button click
+  // scroll to the top and open new tweet form upon bottom button click
   $('.button-to-top').on('click', () => {
     $(window).scrollTop(0);
     $('.new-tweet-form').removeClass('close');

@@ -1,7 +1,7 @@
 .header {
-  width: 100%;
+  width: 35%;
   height: 400px;
-  margin-top: 120px;
+  margin: 200px 30px 200px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -11,7 +11,11 @@
   background-image: url(http://www.transparenttextures.com/patterns/asfalt-dark.png);
 }
 
-.header .header-name-box {
+.image-container {
+  margin-top: 40px;
+}
+
+.header-name-box {
   margin-top: 0.5em;
   font-size: 1.5em;
 }

@@ -22,6 +22,10 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /*
@@ -29,6 +33,6 @@ body {
  */
 
 .container {
-  width: 90%;
-  margin: 0 auto 100px auto;
+  width: 55%;
+  margin: 120px 40px 100px 20px;
 }

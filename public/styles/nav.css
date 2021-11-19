@@ -39,3 +39,9 @@
 .nav-link b {
   font-weight: 600;
 }
+
+/* @media (max-width: 768px) {
+  .nav {
+    background-color: none;
+  }
+} */
