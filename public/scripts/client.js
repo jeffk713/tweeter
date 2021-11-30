@@ -34,6 +34,7 @@ $(document).ready(function () {
 
   // append tweets to .tweets-container
   const renderTweets = tweets => {
+    console.log('render tweets:', tweets);
     for (const tweet of tweets) {
       const tweetToAdd = createTweetElement(tweet);
       $('.tweets-container').prepend(tweetToAdd);
@@ -86,7 +87,7 @@ $(document).ready(function () {
       .then(res => {
         // clear input field and load tweets
         $('#tweet-text').val('');
-        loadTweets();
+        renderTweets([res]);
       })
       .catch(error => alert(error.message));
   });
@@ -95,7 +96,6 @@ $(document).ready(function () {
   $('.nav-link-container i').on('click', () => {
     toggleNewTweet();
   });
-
 
   // laodTweets at initial render
   loadTweets();
